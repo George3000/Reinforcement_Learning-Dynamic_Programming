@@ -140,7 +140,13 @@ env = FrozenLakeEnv(is_slippery=True)
 # The algorithm returns as **output**:
 # - `V`: This is a 1D numpy array with `V.shape[0]` equal to the number of states (`env.nS`).  `V[s]` contains the estimated value of state `s` under the input policy.
 # 
-# Please complete the function in the code cell below.
+# ![Model-Based Learning](images/example_model-based_learning.PNG)
+# 
+# ![what model to pick?](images/Algorithms_maping_to_their_appropriate_description.PNG)
+# 
+# 
+# 
+# Algorithms maping  to their appropriate description.PNG,
 
 # In[81]:
 
@@ -149,6 +155,9 @@ env = FrozenLakeEnv(is_slippery=True)
 # *We determine all quantities though computation
 # *We need to know the details of the MDP (S and A, R)
 # *we don't actually play the game
+#RL is online planing: we don't know T/P or R
+# *we dont know which states are good aor what the actions do
+# * must try actions and states out to learn!
 
 
 # example of Reinforcement Learning - Dynamic Programming - Iterative Policy Evaluation Algorithm
@@ -238,6 +247,8 @@ check_test.run_check('policy_evaluation_check', policy_evaluation)
 # - `q`: This is a 1D numpy array with `q.shape[0]` equal to the number of actions (`env.nA`).  `q[a]` contains the (estimated) value of state `s` and action `a`.
 # 
 # Please complete the function in the code cell below.
+# 
+# 
 
 # In[85]:
 
@@ -246,6 +257,26 @@ check_test.run_check('policy_evaluation_check', policy_evaluation)
 # *We determine all quantities though computation
 # *We need to know the details of the MDP (S and A, R)
 # *we don't actually play the game
+#RL is online planing: we don't know T/P or R
+# *we dont know which states are good aor what the actions do
+# * must try actions and states out to learn!
+
+#Offline(MDPs) vs. Online (RL)
+#Model-Based Learning
+#Model-Based Idea:
+# *learn an approximate model based on experiences
+# *solve or values as if the learned model were correct
+
+#Step 1: Learn empirical MDPmodel
+# *count outcomes s_prime for each s, a
+# *normalize to give an estimate of t_hat(s,a,s_prime)   T=transition to state; same as P
+# *discover R_hat(s,a,s_prime) when we experience (s,a,s_prime)
+
+#Step 2: Solve the learned MDP
+# * for example, use policy evaluation
+
+
+#Explore then exploit
 
 def q_from_v(env, V, s, gamma=1):
     q = np.zeros(env.nA)
