@@ -335,6 +335,18 @@ check_test.run_check('policy_improvement_check', policy_improvement)
 
 
 # example of Reinforcement Learning - Dynamic Programming - Policy Iteration Algorithm
+#step 1: Policy Evaluation: calculate utilities for some fixed policy(not optimal utilities) until convergence
+#step 2: Policy Improvement: update policy using one-step look-ahead (one-step dynamics) with 
+# resulting converged(but not optimal) utilities as future values
+#step 3: repeat steps until policy converges
+#CS188 UCB -lecture 9
+
+#SUMMARY(also good when comparing with other algotithms)
+# Policy Iteration:
+#  * we do several passes that update utilities (V) with fixed policy(
+#     each pass is fast because we consider only one action, not all of them)
+#  * after the policy is evaluated, a new policy is chosen (slow like a value iteration pass)
+#  * the new policy will be better (or we're done)
 import copy
 
 def policy_iteration(env, gamma=1, theta=1e-8):
@@ -485,6 +497,32 @@ check_test.run_check('truncated_policy_iteration_check', truncated_policy_iterat
 # In[105]:
 
 
+# problems with Value Iteration Algorithm
+#Problem 1: it's slow --O(S^2A) per iteration
+#Problem 2: the "max" at each state rarely changes
+#Problem 3: the policy often converges long before the values
+
+#COMPARISON OF:  Value Iteration vs Policy Iteration
+# Value Iteration:
+#  * Every iteration updates both the values and (implicitly) the policy
+#  * we don't track the policy, but talking the max over actions implicitly recomputes it
+
+# Policy Iteration:
+#  * we do several passes that update utilities (V) with fixed policy(
+#     each pass is fast because we consider only one action, not all of them)
+#  * after the policy is evaluated, a new policy is chosen (slow like a value iteration pass)
+#  * the new policy will be better (or we're done)
+
+# BOTH ARE DYNAMIC PROGRAMS FOR SOLVING MDPs
+
+#IN GENERAL: MDP Algorithms:
+# *Compute optimal values: use value iteration or policy iteration
+# *Compute values for a particular policy: use policy evaluation
+# *Turn your values into a policy: use policy extraction (one-step lookahead)
+# They all look the same:
+# *They are all variations of Bellman equations
+# *They all use one-step lookahead(one-step dynamics) expectimax fragments
+# *They differ only in wheather we plug in a fixed policy or max over actions
 def value_iteration(env, gamma=1, theta=1e-8):
     V = np.zeros(env.nS)
     while True:
