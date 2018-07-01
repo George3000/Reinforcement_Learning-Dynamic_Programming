@@ -145,6 +145,12 @@ env = FrozenLakeEnv(is_slippery=True)
 # In[81]:
 
 
+#SOLVING MDPs is offline planing
+# *We determine all quantities though computation
+# *We need to know the details of the MDP (S and A, R)
+# *we don't actually play the game
+
+
 # example of Reinforcement Learning - Dynamic Programming - Iterative Policy Evaluation Algorithm
 # also watch videos from CS188 Artificial Intelligence course at UC Berkeley
 # https://www.youtube.com/watch?v=Csiiv6WGzKM&t=1834s
@@ -236,6 +242,11 @@ check_test.run_check('policy_evaluation_check', policy_evaluation)
 # In[85]:
 
 
+#SOLVING MDPs is offline planing
+# *We determine all quantities though computation
+# *We need to know the details of the MDP (S and A, R)
+# *we don't actually play the game
+
 def q_from_v(env, V, s, gamma=1):
     q = np.zeros(env.nA)
     for a in range(env.nA):
@@ -289,6 +300,11 @@ policy
 
 # In[89]:
 
+
+#SOLVING MDPs is offline planing
+# *We determine all quantities though computation
+# *We need to know the details of the MDP (S and A, R)
+# *we don't actually play the game
 
 def policy_improvement(env, V, gamma=1):
     policy = np.zeros([env.nS, env.nA]) / env.nA
@@ -523,6 +539,12 @@ check_test.run_check('truncated_policy_iteration_check', truncated_policy_iterat
 # *They are all variations of Bellman equations
 # *They all use one-step lookahead(one-step dynamics) expectimax fragments
 # *They differ only in wheather we plug in a fixed policy or max over actions
+
+#SOLVING MDPs is offline planing
+# *We determine all quantities though computation
+# *We need to know the details of the MDP (S and A, R)
+# *we don't actually play the game
+
 def value_iteration(env, gamma=1, theta=1e-8):
     V = np.zeros(env.nS)
     while True:
