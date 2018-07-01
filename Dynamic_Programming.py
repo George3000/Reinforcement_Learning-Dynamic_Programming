@@ -140,13 +140,43 @@ env = FrozenLakeEnv(is_slippery=True)
 # The algorithm returns as **output**:
 # - `V`: This is a 1D numpy array with `V.shape[0]` equal to the number of states (`env.nS`).  `V[s]` contains the estimated value of state `s` under the input policy.
 # 
-# ![Model-Based Learning](images/example_model-based_learning.PNG)
 # 
 # ![what model to pick?](images/Algorithms_maping_to_their_appropriate_description.PNG)
 # 
+# Model-Based Learning
+# * Build the model first
+# 
+# ![Model-Based Learning](images/example_model-based_learning.PNG)
+# ![MBL2](images/MBLearning2.PNG)
+# 
+# Model-Free Learning: DOn't first build the model but directly find the values from experiencing the MDP. 
+# * Passive RL
+#     * Agent is not in control of what happens. It's like the Agent is watching a video af another agent and has no control of what the other agent does. You don't get to choose actions. Things just happen and we learn from that
+# * Active RL
 # 
 # 
-# Algorithms maping  to their appropriate description.PNG,
+# ![PRL1](images/PRL1.PNG)
+# 
+# ![ARL1](images/ARL1.PNG)
+# 
+# ![ARL2](images/ARL2.PNG)
+# 
+# ![ARL3](images/ARL3.PNG)
+# 
+# ![ARL4](images/ARL4.PNG)
+# 
+# ![ARL5](images/ARL5.PNG)
+# 
+# So the big idea is to learn from every experience: enter TD RL(Temporal Difference Learning)
+# 
+# ![ARL6](images/ARL6.PNG)
+# 
+# ![ARL7](images/ARL7.PNG)
+# 
+# ![ARL8](images/ARL8.PNG)
+# 
+# ![ARL9](images/ARL9.PNG)
+# 
 
 # In[81]:
 
