@@ -167,7 +167,7 @@ env = FrozenLakeEnv(is_slippery=True)
 # 
 # ![ARL5](images/ARL5.PNG)
 # 
-# So the big idea is to learn from every experience: enter TD RL(Temporal Difference Learning)
+# ### So the big idea is to learn from every experience: enter TD RL(Temporal Difference Learning)
 # 
 # ![ARL6](images/ARL6.PNG)
 # 
@@ -176,6 +176,52 @@ env = FrozenLakeEnv(is_slippery=True)
 # ![ARL8](images/ARL8.PNG)
 # 
 # ![ARL9](images/ARL9.PNG)
+# 
+# ![ARL10](images/ARL10.PNG)
+# 
+# ![ARL11](images/ARL11.PNG)
+# 
+# ![ARL12](images/ARL12.PNG)
+# 
+# ![ARL13](images/ARL13.PNG)
+# 
+# ![ARL14](images/ARL14.PNG)
+# 
+# ![ARL15](images/ARL15.PNG)
+# 
+# 
+# 
+# ### Next we'll tackle how to decide when to expore and when to exploit. Reminder we used random or some already decided way.
+# 
+# ![ERL1](images/ERL1.PNG)
+# 
+# ![ERL2](images/ERL2.PNG)
+# 
+# ![ERL3](images/ERL3.PNG)
+# 
+# ![ERL5](images/ERL5.PNG)
+# 
+# ### Solution for too many states to visit: treat/describe a state as a vector of features (properties)
+# 
+# ![FRL1](images/FRL1.PNG)
+# 
+# ![FRL2](images/FRL2.PNG)
+# 
+# ![FRL3](images/FRL3.PNG)
+# 
+# ![FRL4](images/FRL4.PNG)
+# 
+# ![FRL5](images/FRL5.PNG)
+# 
+# ![FRL6](images/FRL6.PNG)
+# 
+# ![FRL7](images/FRL7.PNG)
+# 
+# ### Policy Search
+# 
+# ![PSRL1](images/PSRL1.PNG)
+# ![PSRL2](images/PSRL2.PNG)
+# ![PSRL3](images/PSRL3.PNG)
 # 
 
 # In[81]:
